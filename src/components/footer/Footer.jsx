@@ -17,19 +17,19 @@ const Footer = () => {
         // Perform actions based on the clicked social media icon
         switch (socialMedia) {
             case 'facebook':
-                window.open('https://www.facebook.com/profile.php?id=100048499261254', '_blank');
+                window.open('_blank');
                 break;
             case 'twitter':
-                window.open('https://twitter.com/Ashish_Kumar07_', '_blank');
+                window.open('_blank');
                 break;
             case 'instagram':
-                window.open('https://www.instagram.com/who_ashish__', '_blank');
+                window.open('_blank');
                 break;
             case 'linkedin':
-                window.open('https://www.linkedin.com/in/ashish-kumar-124983267', '_blank');
+                window.open('_blank');
                 break;
             case 'github':
-                window.open('https://github.com/Ashishkumar124/Ashishkumar124', '_blank');
+                window.open('https://github.com/DetroitGuru', '_blank');
                 break;
             default:
                 break;
@@ -50,7 +50,7 @@ const Footer = () => {
                     </a></li>
                 </ul>
                 <div className="infoText">
-                The Movix website is a platform dedicated to showcasing a diverse range of movies, TV shows, and other video content. It aims to provide users with an extensive collection of entertainment options, making it a one-stop destination for movie enthusiasts. The site offers a user-friendly interface, allowing visitors to easily browse and search for their favorite titles, read reviews, and access trailers. Additionally, Movix may provide information about upcoming releases and exclusive content for its users.
+                The Moviex website is a platform dedicated to showcasing a diverse range of movies, TV shows, and other video content. It aims to provide users with an extensive collection of entertainment options, making it a one-stop destination for movie enthusiasts. The site offers a user-friendly interface, allowing visitors to easily browse and search for their favorite titles, read reviews, and access trailers. Additionally, Movix may provide information about upcoming releases and exclusive content for its users.
                      </div>
                 <div className="socialIcons">
                 <div className='icon' onClick={() => handleIconClick('facebook')}>
