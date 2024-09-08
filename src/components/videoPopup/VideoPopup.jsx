@@ -1,14 +1,13 @@
 import React from "react";
+import ReactPlayer from "react-player/youtube";
+
 import "./style.scss";
 
-const VideoPopup = ({ show, setShow, tmdbId }) => {
+const VideoPopup = ({ show, setShow, videoId, setVideoId }) => {
     const hidePopup = () => {
         setShow(false);
+        setVideoId(null);
     };
-
-    // Construct the VidSrc embed URL
-    const vidSrcUrl = `https://vidsrc.cc/v2/embed/movie/${tmdbId}`;
-
     return (
         <div className={`videoPopup ${show ? "visible" : ""}`}>
             <div className="opacityLayer" onClick={hidePopup}></div>
@@ -16,14 +15,12 @@ const VideoPopup = ({ show, setShow, tmdbId }) => {
                 <span className="closeBtn" onClick={hidePopup}>
                     Close
                 </span>
-                <iframe
-                    src={vidSrcUrl}
-                    frameBorder="0"
-                    allowFullScreen
+                <ReactPlayer
+                    url={`https://www.youtube.com/watch?v=${videoId}`}
+                    controls
                     width="100%"
                     height="100%"
-                    title="Video Player"
-                    style={{ border: 'none' }}
+                    // playing={true}
                 />
             </div>
         </div>
