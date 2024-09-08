@@ -1,12 +1,12 @@
 import React from "react";
-import ReactPlayer from "react-player/youtube";
+import ReactPlayer from "react-player/vidsrc";
 
 import "./style.scss";
 
-const VideoPopup = ({ show, setShow, videoId, setVideoId }) => {
+const VideoPopup = ({ show, setShow, tmdbId, settmdbId }) => {
     const hidePopup = () => {
         setShow(false);
-        setVideoId(null);
+        settmdbId(null);
     };
     return (
         <div className={`videoPopup ${show ? "visible" : ""}`}>
@@ -16,7 +16,7 @@ const VideoPopup = ({ show, setShow, videoId, setVideoId }) => {
                     Close
                 </span>
                 <ReactPlayer
-                    url={`https://www.youtube.com/watch?v=${videoId}`}
+                    url={`https://vidsrc.cc/v2/embed/movie/${tmdbId}`}
                     controls
                     width="100%"
                     height="100%"
