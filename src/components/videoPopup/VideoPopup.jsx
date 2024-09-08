@@ -1,13 +1,15 @@
 import React from "react";
-import ReactPlayer from "react-player/vidsrc";
 
 import "./style.scss";
 
-const VideoPopup = ({ show, setShow, tmdbId, settmdbId }) => {
+const VideoPopup = ({ show, setShow, tmdbId }) => {
     const hidePopup = () => {
         setShow(false);
-        settmdbId(null);
     };
+
+    // Construct the VidSrc embed URL
+    const vidSrcUrl = `https://vidsrc.cc/v2/embed/movie/${tmdbId}`;
+
     return (
         <div className={`videoPopup ${show ? "visible" : ""}`}>
             <div className="opacityLayer" onClick={hidePopup}></div>
@@ -15,12 +17,13 @@ const VideoPopup = ({ show, setShow, tmdbId, settmdbId }) => {
                 <span className="closeBtn" onClick={hidePopup}>
                     Close
                 </span>
-                <ReactPlayer
-                    url={`https://vidsrc.cc/v2/embed/movie/${tmdbId}`}
-                    controls
+                <iframe
+                    src={vidSrcUrl}
+                    frameBorder="0"
+                    allowFullScreen
                     width="100%"
                     height="100%"
-                    // playing={true}
+                    title="Video Player"
                 />
             </div>
         </div>
