@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./style.scss";
 
 const VideoPopup = ({ show, setShow, tmdbId }) => {
@@ -24,6 +23,7 @@ const VideoPopup = ({ show, setShow, tmdbId }) => {
                     width="100%"
                     height="100%"
                     title="Video Player"
+                    style={{ border: 'none' }}
                 />
             </div>
         </div>
